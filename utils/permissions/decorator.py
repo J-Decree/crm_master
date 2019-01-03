@@ -1,3 +1,4 @@
+from functools import wraps
 from django.core.urlresolvers import resolve
 from django.shortcuts import redirect, HttpResponse
 from django.conf import settings
@@ -123,6 +124,7 @@ def check_perm(*args, **kwargs):
 
 # 装饰器函数
 def check_permission(func):
+    @wraps(func)  # 保留原有函数的名称和docstring
     def inner(*args, **kwargs):
         request = args[0]
         if not request.user.is_authenticated():

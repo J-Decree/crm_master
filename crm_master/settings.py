@@ -145,7 +145,7 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = os.environ.get('qqemail')  # 你的 QQ 账号
 EMAIL_HOST_PASSWORD = 'tungwiacnhxubcgg'
 EMAIL_USE_TLS = True  # 这里必须是 True，否则发送不成功
-EMAIL_FROM = 'python<%>'%os.environ.get('qqemail')  # 你的 QQ 账号
+EMAIL_FROM = 'python<%s>'%os.environ.get('qqemail')  # 你的 QQ 账号
 
 # 上传配置
 CRM_FILE_UPLOAD_DIR = 'enroll_uploads'
